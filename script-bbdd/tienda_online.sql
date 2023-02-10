@@ -9,9 +9,7 @@ CREATE TABLE roles (
     nombre VARCHAR(60)
 );
 
-# La restricción CHECK se escribe después del tipo de datos y asegura que el valor en el campo fecha_nacimiento 
-# cumpla con la condición especificada. La condición YEAR(fecha_nacimiento) < YEAR(CURDATE())-18 significa que 
-# el año de la fecha de nacimiento debe ser menor que el año actual menos 18 años.
+# Creamos tabla usuarios con su clave foranea id_rol de la tabla roles
 CREATE TABLE usuarios (
     id_usuario INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100),
