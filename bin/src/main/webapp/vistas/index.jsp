@@ -7,7 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+
 		<h1>Hola soy un index.jsp</h1>
-		<h2>Tukituku</h2>
 </body>
 </html>
