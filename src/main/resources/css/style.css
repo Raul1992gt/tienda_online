@@ -1,0 +1,13 @@
+.search-bar {
+  margin-right: 100px;
+}
+
+.right-elements {
+  flex: 1;
+}
+
+body {
+  background-image: url("/img/fondo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
