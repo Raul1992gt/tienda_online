@@ -18,27 +18,12 @@ public class Producto implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id_producto")
 	private int idProducto;
-<<<<<<< HEAD
 
 	private String descripcion;
 
 	private String estado;
 
 	private String img;
-=======
- 
-	private String estado;
-	
-	public String getEstado() {
-		return estado;
-	}
-
-	public void setEstado(String estado) {
-		this.estado = estado;
-	}
-
-	private String descripcion;
->>>>>>> main
 
 	private String nombre;
 
@@ -46,7 +31,6 @@ public class Producto implements Serializable {
 
 	private int stock;
 
-<<<<<<< HEAD
 	//uni-directional many-to-one association to Tipo
 	@ManyToOne
 	@JoinColumn(name="id_tipo")
@@ -59,11 +43,6 @@ public class Producto implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
-=======
-	public Producto() {
-	}
-
->>>>>>> main
 	public int getIdProducto() {
 		return this.idProducto;
 	}
@@ -80,7 +59,6 @@ public class Producto implements Serializable {
 		this.descripcion = descripcion;
 	}
 
-<<<<<<< HEAD
 	public String getEstado() {
 		return this.estado;
 	}
@@ -97,8 +75,6 @@ public class Producto implements Serializable {
 		this.img = img;
 	}
 
-=======
->>>>>>> main
 	public String getNombre() {
 		return this.nombre;
 	}
@@ -123,7 +99,6 @@ public class Producto implements Serializable {
 		this.stock = stock;
 	}
 
-<<<<<<< HEAD
 	public Tipo getTipo() {
 		return this.tipo;
 	}
@@ -132,6 +107,4 @@ public class Producto implements Serializable {
 		this.tipo = tipo;
 	}
 
-=======
->>>>>>> main
 }

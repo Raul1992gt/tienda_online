@@ -1,6 +1,5 @@
 package com.edix.grupo.tienda.full.stack.java.dao;
 
-<<<<<<< HEAD
 import java.util.List;
 
 import com.edix.grupo.tienda.full.stack.java.entitybeans.Direccione;
@@ -16,8 +15,4 @@ public interface UsuarioDao {
 	int eliminarUsuario(String username);
 	int modificarUsuario(Usuario usuario);
 	List<Usuario> buscarPorLocalidad(String localidad);
-=======
-public interface UsuarioDao {
-
->>>>>>> main
 }

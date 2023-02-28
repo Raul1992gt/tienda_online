@@ -1,6 +1,5 @@
 package com.edix.grupo.tienda.full.stack.java.dao;
 
-<<<<<<< HEAD
 import java.util.List;
 
 import com.edix.grupo.tienda.full.stack.java.entitybeans.TarjetasBancaria;
@@ -14,8 +13,5 @@ public interface TarjetaDao {
 	List<TarjetasBancaria> todas();
 	List<TarjetasBancaria> findByUsername(String username);
 	
-=======
-public interface TarjetaDao {
->>>>>>> main
 
 }

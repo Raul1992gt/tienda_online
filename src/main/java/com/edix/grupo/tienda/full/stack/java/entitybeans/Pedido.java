@@ -4,10 +4,7 @@ import java.io.Serializable;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
-<<<<<<< HEAD
 import java.util.List;
-=======
->>>>>>> main
 
 
 /**
@@ -33,7 +30,6 @@ public class Pedido implements Serializable {
 
 	private BigDecimal precioTotal;
 
-<<<<<<< HEAD
 	//bi-directional many-to-one association to AticulosPedido
 	@OneToMany(mappedBy="pedido")
 	private List<AticulosPedido> aticulosPedidos;
@@ -51,22 +47,11 @@ public class Pedido implements Serializable {
 	//uni-directional many-to-one association to Usuario
 	@ManyToOne
 	@JoinColumn(name="username")
-=======
-	//uni-directional many-to-one association to Producto
-	@ManyToOne
-	@JoinColumn(name="id_producto")
-	private Producto producto;
-
-	//uni-directional many-to-one association to Usuario
-	@ManyToOne
-	@JoinColumn(name="id_usuario")
->>>>>>> main
 	private Usuario usuario;
 
 	public Pedido() {
 	}
 
-<<<<<<< HEAD
 	
 	public Pedido(int idPedido, String estado, Date fechaRealizacion, BigDecimal precioTotal,
 			Usuario usuario, Direccione direccione, TarjetasBancaria tarjetasBancaria) {
@@ -81,8 +66,6 @@ public class Pedido implements Serializable {
 	}
 
 
-=======
->>>>>>> main
 	public int getIdPedido() {
 		return this.idPedido;
 	}
@@ -115,7 +98,6 @@ public class Pedido implements Serializable {
 		this.precioTotal = precioTotal;
 	}
 
-<<<<<<< HEAD
 	public List<AticulosPedido> getAticulosPedidos() {
 		return this.aticulosPedidos;
 	}
@@ -152,14 +134,6 @@ public class Pedido implements Serializable {
 
 	public void setTarjetasBancaria(TarjetasBancaria tarjetasBancaria) {
 		this.tarjetasBancaria = tarjetasBancaria;
-=======
-	public Producto getProducto() {
-		return this.producto;
-	}
-
-	public void setProducto(Producto producto) {
-		this.producto = producto;
->>>>>>> main
 	}
 
 	public Usuario getUsuario() {

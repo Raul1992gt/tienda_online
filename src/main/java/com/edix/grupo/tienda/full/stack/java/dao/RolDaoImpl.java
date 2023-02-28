@@ -1,6 +1,5 @@
 package com.edix.grupo.tienda.full.stack.java.dao;
 
-<<<<<<< HEAD
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,8 +46,4 @@ public class RolDaoImpl implements RolDao{
 	
 	
 
-=======
-public class RolDaoImpl implements RolDao{
-
->>>>>>> main
 }

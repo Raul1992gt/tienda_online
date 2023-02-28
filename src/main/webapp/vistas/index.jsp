@@ -35,7 +35,6 @@ body {
 </style>
 </head>
 <body>
-<<<<<<< HEAD
 	<br>
 	<jsp:include page="inicio.jsp"></jsp:include>
 	<br>
@@ -243,9 +242,5 @@ body {
 		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
 		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 		crossorigin="anonymous"></script>
-=======
-		<h1>Hola soy un index.jsp</h1>
-		<h2>Tukituku</h2>
->>>>>>> main
 </body>
 </html>

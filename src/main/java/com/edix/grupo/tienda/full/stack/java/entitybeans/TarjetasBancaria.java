@@ -2,11 +2,8 @@ package com.edix.grupo.tienda.full.stack.java.entitybeans;
 
 import java.io.Serializable;
 import javax.persistence.*;
-<<<<<<< HEAD
 
 import java.util.ArrayList;
-=======
->>>>>>> main
 import java.util.Date;
 
 
@@ -39,15 +36,9 @@ public class TarjetasBancaria implements Serializable {
 
 	//uni-directional many-to-one association to Usuario
 	@ManyToOne
-<<<<<<< HEAD
 	@JoinColumn(name="username")
 	private Usuario usuario;
 	
-=======
-	@JoinColumn(name="id_usuario")
-	private Usuario usuario;
-
->>>>>>> main
 	public TarjetasBancaria() {
 	}
 

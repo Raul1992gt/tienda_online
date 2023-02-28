@@ -29,7 +29,6 @@ public class AticulosPedido implements Serializable {
 	@ManyToOne
 	@JoinColumn(name="id_producto")
 	private Producto producto;
-<<<<<<< HEAD
 	
 
 	public AticulosPedido() {
@@ -46,12 +45,6 @@ public class AticulosPedido implements Serializable {
 	}
 
 
-=======
-
-	public AticulosPedido() {
-	}
-
->>>>>>> main
 	public int getId_pedArticulo() {
 		return this.id_pedArticulo;
 	}

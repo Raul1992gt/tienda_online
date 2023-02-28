@@ -1,6 +1,5 @@
 package com.edix.grupo.tienda.full.stack.java.dao;
 
-<<<<<<< HEAD
 import java.util.Date;
 import java.util.List;
 
@@ -74,9 +73,4 @@ public class PedidoDaoImpl implements PedidoDao{
 	}
 
 
-=======
-
-public class PedidoDaoImpl implements PedidoDao{
-
->>>>>>> main
 }

@@ -1,6 +1,5 @@
 package com.edix.grupo.tienda.full.stack.java.dao;
 
-<<<<<<< HEAD
 import java.util.List;
 
 import com.edix.grupo.tienda.full.stack.java.entitybeans.Direccione;
@@ -13,8 +12,4 @@ public interface DireccionDao {
 	Direccione buscarUna(int idDireccion);
 	List<Direccione> todas();
 	public List<Direccione> findByLocalidad(String localidad);
-=======
-public interface DireccionDao {
-
->>>>>>> main
 }
