@@ -1,5 +1,6 @@
 package com.edix.grupo.tienda.full.stack.java.dao;
 
+<<<<<<< HEAD
 import java.util.ArrayList;
 import java.util.List;
 
@@ -98,3 +99,8 @@ public class UsuarioDaoImpl implements UsuarioDao{
 
 
 
+=======
+public class UsuarioDaoImpl implements UsuarioDao{
+
+}
+>>>>>>> main

@@ -15,6 +15,10 @@ public class Role implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+<<<<<<< HEAD
+=======
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+>>>>>>> main
 	@Column(name="id_rol")
 	private int idRol;
 

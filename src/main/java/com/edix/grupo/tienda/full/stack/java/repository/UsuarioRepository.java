@@ -1,5 +1,6 @@
 package com.edix.grupo.tienda.full.stack.java.repository;
 
+<<<<<<< HEAD
 
 
 import java.util.List;
@@ -16,4 +17,13 @@ public interface UsuarioRepository extends JpaRepository<Usuario, String>{
 
 	@Query("SELECT u FROM Usuario u JOIN u.direcciones d WHERE d.localidad = :localidad")
     List<Usuario> findByLocalidad(@Param("localidad") String localidad);
+=======
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.edix.grupo.tienda.full.stack.java.entitybeans.Usuario;
+
+
+public interface UsuarioRepository extends JpaRepository<Usuario, Integer>{
+
+>>>>>>> main
 }

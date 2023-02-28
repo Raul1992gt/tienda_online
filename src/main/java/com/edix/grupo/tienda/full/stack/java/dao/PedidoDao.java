@@ -1,5 +1,6 @@
 package com.edix.grupo.tienda.full.stack.java.dao;
 
+<<<<<<< HEAD
 import java.util.Date;
 import java.util.List;
 
@@ -15,4 +16,8 @@ public interface PedidoDao {
 	boolean elminarPedido(int idPedido);
 	Pedido buscarUno(int idPedido);
 	List<Pedido> porFechaRealizacion(Date fechaRealizacion);
+=======
+public interface PedidoDao {
+
+>>>>>>> main
 }

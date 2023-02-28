@@ -39,6 +39,7 @@ import com.edix.grupo.tienda.full.stack.java.entitybeans.Usuario;
 @Controller
 public class HomeController {
 
+<<<<<<< HEAD
 	
 	@Autowired
 	private ProductoDao pdao;
@@ -70,9 +71,13 @@ public class HomeController {
 		}
 		}
 		model.addAttribute("productos", listproductos);
+=======
+	@GetMapping("/inicio")
+	public String inicio() {
+>>>>>>> main
 		return "index";
-		
 	}
+<<<<<<< HEAD
 	
 	@GetMapping("/registro")
 	public String registro(Model model) {
@@ -167,4 +172,6 @@ public class HomeController {
 		}
 		
 		
+=======
+>>>>>>> main
 }

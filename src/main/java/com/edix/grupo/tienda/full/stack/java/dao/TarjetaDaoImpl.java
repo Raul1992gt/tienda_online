@@ -1,5 +1,6 @@
 package com.edix.grupo.tienda.full.stack.java.dao;
 
+<<<<<<< HEAD
 import java.util.List;
 import java.util.Optional;
 
@@ -70,4 +71,8 @@ public class TarjetaDaoImpl implements TarjetaDao{
 		return trepo.findByUsuario_Username(username);
 	}
 
+=======
+public class TarjetaDaoImpl implements TarjetaDao{
+
+>>>>>>> main
 }
