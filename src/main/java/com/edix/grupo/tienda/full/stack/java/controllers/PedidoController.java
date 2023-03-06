@@ -25,7 +25,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.edix.grupo.tienda.full.stack.java.dao.ArticuloPedidoDao;
 import com.edix.grupo.tienda.full.stack.java.dao.DireccionDao;
-import com.edix.grupo.tienda.full.stack.java.dao.DireccionDaoImpl;
 import com.edix.grupo.tienda.full.stack.java.dao.PedidoDao;
 import com.edix.grupo.tienda.full.stack.java.dao.ProductoDao;
 import com.edix.grupo.tienda.full.stack.java.dao.RolDao;
@@ -35,9 +34,7 @@ import com.edix.grupo.tienda.full.stack.java.entitybeans.AticulosPedido;
 import com.edix.grupo.tienda.full.stack.java.entitybeans.Direccione;
 import com.edix.grupo.tienda.full.stack.java.entitybeans.Pedido;
 import com.edix.grupo.tienda.full.stack.java.entitybeans.Producto;
-import com.edix.grupo.tienda.full.stack.java.entitybeans.Role;
 import com.edix.grupo.tienda.full.stack.java.entitybeans.TarjetasBancaria;
-import com.edix.grupo.tienda.full.stack.java.entitybeans.Tipo;
 import com.edix.grupo.tienda.full.stack.java.entitybeans.Usuario;
 
 @Controller
@@ -103,6 +100,16 @@ public class PedidoController {
 					 return "redirect:/";
 				 }
 			}
+			 AticulosPedido aux = ardao.findByPedidoProdcuto(idProd, idProd);
+			 if(aux==null) {
+				 if(p.getStock() > 0) {
+					 ap = new AticulosPedido(0, 1, pe, p);
+					 p.setStock(p.getStock() -1);
+					 pdao.modificarProducto(p);
+					 ardao.guardarArPe(ap);
+				 }
+				 return "redirect:/";
+			 }
 		}
 		ap = new AticulosPedido(0, 1, pe, p);
 		ardao.guardarArPe(ap);
@@ -149,9 +156,8 @@ public class PedidoController {
 							Pedido pe = pedao.obtenerCarrito(usu.getUsername());
 							if(pe==null) {
 								peSession.setUsuario(usu);
-								pedao.guardarPedido(peSession);
-								Pedido aux = pedao.obtenerCarrito(usesion.getUsername());
-								pedao.elminarPedido(aux.getIdPedido());
+								pedao.guardarPedido(peSession);						
+								pedao.elminarPedido(peSession.getIdPedido());
 							}else {
 								List <AticulosPedido> lSession = ardao.findByPedido(peSession.getIdPedido());
 								List <AticulosPedido> lLog = ardao.findByPedido(pe.getIdPedido());
@@ -241,17 +247,16 @@ public class PedidoController {
 			pdao.modificarProducto(p);
 			misession.removeAttribute("contador");
 			misession.setAttribute("contador", contador-aP.getCantidad());
-			if(ardao.findByPedido(idPed)==null) {
-				pedao.elminarPedido(idPed);
-			}
-			if(ardao.findByPedidoProdcuto(idPed, idProd)==null) {
-				pedao.elminarPedido(idPed);
-			}
-			return "redirect:/pedidos/carrito";
 		}else {
 			model.addAttribute("mensaje", "No se pudo eliminar el/los articulo");
-			return "redirect:/pedidos/carrito";
+		
 		}
+		List<AticulosPedido> lAp = ardao.findByPedido(idPed);
+		System.out.println(lAp.size());
+		if(lAp.size()==0) {
+			pedao.elminarPedido(idPed);
+		}
+		return "redirect:/pedidos/carrito";
 	}
 	
 	@GetMapping("/verPedido/{idPedido}")

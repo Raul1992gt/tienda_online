@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+     pageEncoding="ISO-8859-1"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %> 
 <!DOCTYPE html>
@@ -35,7 +35,7 @@
         <th>Apellidos</th>
         <th>Fecha nacimiento</th>
         <th>Fecha Registro</th>
-        <th>Eliminar</th>
+        <th>Estadisticas</th>
         <th></th>
         
         <c:forEach var="ele" items="${todosUsuarios}">
@@ -45,7 +45,6 @@
                 <td>${ele.apellidos}</td>				
                 <td>${ele.fechaNacimiento}</td>				
                 <td>${ele.fechaRegistro}</td>	
-                <td><a href="/usuario/eliminar/${ele.username}" class="btn btn-danger btn-sm">Eliminar</a></td>
                 <td><a href="/pedidos/verTotalPedido/${ele.username}" class="btn btn-primary btn-sm">Total pedidos</a></td>
             </tr>
         </c:forEach>

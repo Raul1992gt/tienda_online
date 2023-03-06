@@ -67,15 +67,7 @@ public class HomeController {
 			misession.setAttribute("contador", contador);
 			model.addAttribute("productos", listproductos);
 			return "index";
-			}else {
-				List<AticulosPedido> lArp = apdao.findByPedido(p.getIdPedido());
-				for (AticulosPedido aticulosPedido : lArp) {
-					contador = aticulosPedido.getCantidad() + contador;
-				}
-				misession.setAttribute("contador", contador);
-				model.addAttribute("productos", listproductos);
-				return "index";
-		}
+			}
 		}else {
 			if( misession.getAttribute("invitado")!=null) {
 				String invitado = (String) misession.getAttribute("invitado");
@@ -103,6 +95,42 @@ public class HomeController {
 		model.addAttribute("roles", lRoles );
 		return "/registroUsuario";
 	}
+	
+	@GetMapping("/registroInvitado")
+	public String registroInvitado(Model model) {
+		
+		return "/registroUsuarioInvitado";
+	}
+	
+	@PostMapping("/registroInvitado")
+	public String proregistrarInvitado(Model model, Usuario usuario, RedirectAttributes ratt) {
+		
+		usuario.addRol(rdao.buscarRol(1));
+		usuario.setEnabled(true);
+		usuario.setFechaRegistro(new Date());
+		usuario.setContrasena(passwordEncoder.encode(usuario.getContrasena()));
+		if(!mayorEdad(usuario.getFechaNacimiento())) {
+			model.addAttribute("mensaje", "Debes ser mayor de edad, para registrarte");
+			return "/registroUsuario";
+		}
+		if(mayorEdad(usuario.getFechaNacimiento())) {
+			if (udao.registro(usuario)) {
+		 		return "redirect:/login";
+		 	}
+		 	else {
+		 		model.addAttribute("mensaje", "ya existe como usuario");
+		 		return "/registroUsuarioInvitado";
+		 		
+		 	}
+		}else {
+			model.addAttribute("mensaje", "Debe ser mayor de edad");
+			return "/registroUsuarioInvitado";
+
+		}
+	 	
+	}
+	
+	
 	@PostMapping("/registro")
 	public String proregistrar(@RequestParam("rol") String rol, Model model, Usuario usuario, RedirectAttributes ratt) {
 		System.out.println(rol);
@@ -123,7 +151,7 @@ public class HomeController {
 		}
 		if(mayorEdad(usuario.getFechaNacimiento())) {
 			if (udao.registro(usuario)) {
-		 		return "redirect:/login";
+		 		return "/registroUsuario";
 		 	}
 		 	else {
 		 		model.addAttribute("mensaje", "ya existe como usuario");

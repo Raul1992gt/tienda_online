@@ -40,12 +40,12 @@
 		// Las vistas públicas no requieren autenticación
 		.antMatchers("/", "/login", "/logout", "/registro","/search", 
 				"/detallesProducto/**", "/recursos/**", "/img/**",
+				"/producto/destacados", "/producto/oferta",
 				"/api/producto/precio/**", "/api/producto/productos/**",
-				"/api/usuario/usuarios/**", "/pedidos/modCarrito/**","/pedidos/carrito", "/pedidos/delete/**/**" ).permitAll()
+				"/registroInvitado",
+				"/api/usuario/usuarios/**", "/pedidos/modCarrito/**","/pedidos/carrito", "/pedidos/delete/**/**", "/producto/tipo/**", "/destacados" ,"/oferta").permitAll()
 		
 		//  Las autorizaciones sobre urls para ROLES
-			.antMatchers("/destacados").hasAnyAuthority("ROLE_CLIENTE",  "ROLE_ADMIN")
-			.antMatchers("/oferta").hasAnyAuthority("ROLE_CLIENTE","ROLE_ADMIN")
 			.antMatchers("/eliminarProducto/**").hasAnyAuthority("ROLE_ADMIN")
 			.antMatchers("/modificarProducto/**").hasAnyAuthority("ROLE_ADMIN")
 			.antMatchers("/modificarProducto").hasAnyAuthority("ROLE_ADMIN")
